@@ -1,7 +1,7 @@
 # app/Dockerfile
 FROM python:3.9-slim
 WORKDIR /app
-ENV MICROSERVICE_URL
+#ENV MICROSERVICE_URL
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
