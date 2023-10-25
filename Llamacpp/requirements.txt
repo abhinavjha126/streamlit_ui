@@ -1,0 +1,10 @@
+pymupdf 
+pygpt4all 
+sentence_transformers 
+accelerate 
+gpt4all==1.0.8 
+openai 
+pypdf 
+llama-cpp-python
+uvicorn
+llama-cpp-python[server]
