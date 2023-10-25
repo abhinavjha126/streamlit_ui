@@ -1,7 +1,7 @@
 # app/Dockerfile
 FROM python:3.9-slim
 WORKDIR /app
-ENV MICROSERVICE_URL #(http://10.108.248.246:2600/v1/completions)
+ENV LLM_ENDPOINT #(http://10.108.248.246:2600/v1/completions)
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
