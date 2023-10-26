@@ -1,0 +1,14 @@
+ARG OWNER=dockerhub.zeblok.io
+ARG BASE_CONTAINER=$OWNER/zeblok/minimal-notebook:2023.09.21
+FROM $BASE_CONTAINER
+LABEL maintainer="PrincePrashantSaini"
+USER root
+RUN apt update && apt install wget curl -y
+USER $NB_UID
+RUN mkdir models && cd models && wget https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q4_0.gguf
+RUN pip install pymupdf pygpt4all sentence_transformers accelerate gpt4all==1.0.8 openai pypdf llama-cpp-python uvicorn llama-cpp-python[server]
+RUN pip install -U git+https://github.com/jerryjliu/llama_index.git
+COPY ./LlamaIndex_Private_Setup.ipynb ./
+USER $NB_UID
+RUN export MODEL=./models/llama-2-13b-chat.Q4_0.gguf HOST=0.0.0.0 PORT=2600
+CMD [ "python", "-m", "llama_cpp.server"]
