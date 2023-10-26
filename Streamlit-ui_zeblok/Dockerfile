@@ -1,7 +1,7 @@
 # app/Dockerfile
 FROM python:3.9-slim
 WORKDIR /app
-ENV LLM_ENDPOINT #(http://10.108.248.246:2600/v1/completions)
+ENV ZBLC_LLM_ENDPOINT http://localhost:2600
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
