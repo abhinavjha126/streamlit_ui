@@ -2,10 +2,10 @@
 LINK: https://blog.streamlit.io/how-to-build-a-llama-2-chatbot/
 ```
 ```bash
-DOCKERIMAGE: dockerhub.zeblok.io/zeblok/streamlit:2023.10.27
+DOCKERIMAGE: dockerhub.zeblok.io/zeblok/streamlit:v1698301125
 PORT: HTTP(8501)
 ```
 ```bash
 While spawning streamlitui microservice pass this environment variable
-LLM_ENDPOINT: http://<service-ip-of-llm-microservice>:2600/v1/completions
+ZBLC_LLM_ENDPOINT: http://<service-ip-of-llm-microservice>:2600/v1/completions
 ```
